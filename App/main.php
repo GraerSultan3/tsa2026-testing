@@ -12,7 +12,7 @@
     }
     if ($processedData->rType == "getUser")
     {
-      $sql = sprintf("SELECT * FROM user_accounts WHERE username=%s AND password=%s", $processedData->username, $processedData->password);
+      $sql = (string) sprintf("SELECT * FROM user_accounts WHERE username=%s AND password=%s LIMIT 1", $processedData->username, $processedData->password);
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0)
