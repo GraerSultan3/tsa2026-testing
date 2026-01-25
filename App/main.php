@@ -15,9 +15,6 @@
       $sql = $conn->prepare("SELECT * FROM user_accounts WHERE username=? AND password=? LIMIT 1");
       $sql->bind_param("ss", $processedData->username, $processedData->password);
       $result = $sql->execute();
-      
-      $conn->close();
-      $sql->close();
 
       if ($result->num_rows > 0)
       {
@@ -26,8 +23,11 @@
       }
       else
       {
-        echo "No user found";
+        echo $result;
       }
+
+      $sql->close();
+      $conn->close();
     }
     else
     {
