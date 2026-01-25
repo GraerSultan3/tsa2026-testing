@@ -19,27 +19,13 @@ var data = {
     "index": 0
 };
 
-var xmlData = toXML(data);
+var xmlData = JSON.stringify(data);
 
 
 xml.open("POST", "test.php", true);
-xml.setRequestHeader("Content-type", "application.xml");
+xml.setRequestHeader("Content-type", "application/json");
 xml.send(data);
 
 xml.onreadystatechange = function() {
     document.querySelector("#fillMe").innerHTML = this.responseText;
-}
-
-function toXML(data)
-{
-    var xmlData = '<?xml version="1.0" encoding="UTF-8"?><body>'
-
-    for (let [key, value] of Object.entries(data))
-    {
-        xmlData += `<${key}>${value}</${key}>`;
-    }
-
-    xmlData += "</body>";
-    return xmlData;
-
 }
