@@ -1,0 +1,55 @@
+:root
+{
+    --font-factor: 1;
+
+    @media screen and (max-width: 600px)
+    {
+        --font-factor: 0.9;
+    } /*Mobile Scaling*/
+
+    @media screen and (min-width: 601px) and (max-width: 1024px)
+    {
+        --font-factor: 0.7;
+    }
+
+    @media screen and (min-width: 1024px)
+    {
+        --font-factor: 0.65;
+    } /*Desktop scaling*/
+}
+
+h1
+{
+    --init-size: calc(2em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(2vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+h2
+{
+    --init-size: calc(1.5em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(1.5vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+h3
+{
+    --init-size: calc(1.17em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(1.17vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+h4
+{
+    --init-size: calc(1em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(1vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+h5
+{
+    --init-size: calc(0.83em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(0.83vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+h6
+{
+    --init-size: calc(0.67em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(0.67vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+p, div, a
+{
+    --init-size: calc(1em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(1vw * var(--font-factor)) + 0.25rem, calc(var(--init-size) * 2));
+}
