@@ -20,6 +20,10 @@
         $row = $result->fetch_assoc();
         echo sprintf("Welcome %s", $rpw['first_name']);
       }
+      else
+      {
+        echo "No user found";
+      }
     }
     else
     {
