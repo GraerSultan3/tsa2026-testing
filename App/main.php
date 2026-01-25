@@ -5,7 +5,7 @@
   {
     $processedData = json_decode($data);
 
-    if $processedData->rType == "getUser"
+    if ($processedData->rType == "getUser")
     {
         echo "Nice to see you user";
     }
