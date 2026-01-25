@@ -22,7 +22,7 @@ var data = {
 var xmlData = toXML(data);
 
 
-xml.open("POST", test.php, true);
+xml.open("POST", "test.php", true);
 xml.setRequestHeader("Content-type", "application.xml");
 xml.send(data);
 
@@ -41,4 +41,5 @@ function toXML(data)
 
     xmlData += "</body>";
     return xmlData;
+
 }
