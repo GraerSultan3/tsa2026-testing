@@ -23,7 +23,7 @@
       }
       else
       {
-        echo $result;
+        echo $result->num_rows;
       }
 
       $sql->close();
