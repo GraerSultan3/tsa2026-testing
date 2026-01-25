@@ -6,7 +6,7 @@
     $processedData = json_decode($data);
     if ($processedData === null)
     {
-        echo "I'm dead frfr";
+        echo json_last_msg() + " " + $data;
     }
     if ($processedData->rType == "getUser")
     {
@@ -16,8 +16,6 @@
     {
         echo $processedData->rType;
     }
-
-     echo "yo i fucking exist ya know";
   }
   catch (Exception $e)
   {
