@@ -23,7 +23,7 @@
       }
       else
       {
-        echo "nobody found;
+        echo "nobody found";
       }
 
       $sql->close();
