@@ -25,8 +25,6 @@ form.addEventListener("submit", (e) => {
         "password": formData.get("password")
     };
 
-    var xmlData = toXML(data);
-
 
     xml.open("POST", "test.php", true);
     xml.setRequestHeader("Content-type", "application/json");
@@ -36,4 +34,5 @@ form.addEventListener("submit", (e) => {
         document.querySelector("#fillMe").innerHTML = this.responseText;
     }
 });
+
 
