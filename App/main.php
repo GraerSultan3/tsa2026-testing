@@ -18,7 +18,7 @@
       if ($result->num_rows > 0)
       {
         $row = $result->fetch_assoc();
-        echo sprintf("Welcome %s", $rpw["first_name]);
+        echo sprintf("Welcome %s", $rpw['first_name']);
       }
     }
     else
