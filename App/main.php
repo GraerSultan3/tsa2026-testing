@@ -14,8 +14,10 @@
     {
       $sql = $conn->prepare("SELECT * FROM user_accounts WHERE username=? AND password=? LIMIT 1");
       $sql->bind_param("ss", $processedData->username, $processedData->password);
-      $sql->execute();
+      $result = $sql->execute();
+      
       $conn->close();
+      $sql->close();
 
       if ($result->num_rows > 0)
       {
