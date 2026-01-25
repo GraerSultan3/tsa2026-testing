@@ -1,0 +1,55 @@
+:root
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    margin: 0;
+    font-family: "Ubuntu Sans Mono", monospace;
+    background-color: #0D3B66;
+    padding: 0;
+    margin: 0;
+    color: #FCFAFA;
+}
+
+nav
+{
+    display: grid;
+    grid-template-rows: 0.25fr 1fr;
+    justify-items: center;
+    padding: min(2vh, 2%) min(5vw, 5%);
+    color: #161925;
+    background-color: #FCFAFA;
+
+    --init-size: calc(0.9rem * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * var(--font-factor) * 0.5), calc(calc(1vw * --init-size) * var(--font-factor) + 0.25rem), calc(var(--init-size) * var(--font-factor) * 2));
+}
+nav h1
+{
+    padding: 0;
+    grid-column: 2;
+    grid-row: 2;
+}
+nav #title
+{
+    --init-size: calc(3em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(2vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
+
+.redirect
+{
+    background-color: #FCFAFA;
+    border-radius: 1.5vh;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: #161925;
+
+    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+}
+.redirect:hover
+{
+    background-color: #161925;
+    color: #FCFAFA;
+    text-decoration: underline;
+}
