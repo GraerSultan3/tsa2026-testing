@@ -9,6 +9,10 @@
     {
         echo "Nice to see you user";
     }
+    else
+    {
+        echo $processedData->rType;
+    }
   }
   catch (Exception $e)
   {
