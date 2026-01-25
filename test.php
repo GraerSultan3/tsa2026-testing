@@ -10,7 +10,7 @@
 
     echo "Filled u";
   }
-  catch
+  catch (Exception $e)
   {
     echo "Chat idk where tf to put this data";
   }  
