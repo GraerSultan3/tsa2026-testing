@@ -5,7 +5,10 @@
   {
     $processedData = json_decode($data);
 
-    echo "Filled u";
+    if $processedData->rType == "getUser"
+    {
+        echo "Nice to see you user";
+    }
   }
   catch (Exception $e)
   {
