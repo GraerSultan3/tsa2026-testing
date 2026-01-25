@@ -28,13 +28,14 @@ form.addEventListener("submit", (e) => {
 
     xml.open("POST", "../App/main.php", true);
     xml.setRequestHeader("Content-type", "application/json");
-    xml.send(data);
+    xml.send(JSON.stringify(data));
 
     xml.onreadystatechange = function() {
         document.querySelector("#fillMe").innerHTML = this.responseText;
         console.log(this.responseText);
     }
 });
+
 
 
 
