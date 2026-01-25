@@ -12,20 +12,27 @@ else
     title.style.gridColumn = `${Math.round(nav.children.length / 2)}`;
 }
 
-var xml = new XMLHttpRequest();
-var data = {
-    "rType": "fillMe",
-    "dType": "test",
-    "index": 0
-};
+var form = document.querySelector("#signin");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var formData = new FormData(form);
 
-var xmlData = JSON.stringify(data);
+    var xml = new XMLHttpRequest();
+    var data = {
+        "rType": "getUser",
+        "dType": "user_accounts",
+        "username": formData.get("username"),
+        "password": formData.get("password");
+    };
+
+    var xmlData = toXML(data);
 
 
-xml.open("POST", "test.php", true);
-xml.setRequestHeader("Content-type", "application/json");
-xml.send(data);
+    xml.open("POST", "test.php", true);
+    xml.setRequestHeader("Content-type", "application/json");
+    xml.send(data);
 
-xml.onreadystatechange = function() {
-    document.querySelector("#fillMe").innerHTML = this.responseText;
-}
+    xml.onreadystatechange = function() {
+        document.querySelector("#fillMe").innerHTML = this.responseText;
+    }
+});
