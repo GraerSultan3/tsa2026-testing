@@ -26,7 +26,7 @@ form.addEventListener("submit", (e) => {
     };
 
 
-    xml.open("POST", "test.php", true);
+    xml.open("POST", "../App/test.php", true);
     xml.setRequestHeader("Content-type", "application/json");
     xml.send(data);
 
@@ -34,5 +34,6 @@ form.addEventListener("submit", (e) => {
         document.querySelector("#fillMe").innerHTML = this.responseText;
     }
 });
+
 
 
