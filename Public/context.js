@@ -32,9 +32,10 @@ form.addEventListener("submit", (e) => {
 
     xml.onreadystatechange = function() {
         document.querySelector("#fillMe").innerHTML = this.responseText;
-        console.log("response collected + " this.responseText);
+        console.log(this.responseText);
     }
 });
+
 
 
 
