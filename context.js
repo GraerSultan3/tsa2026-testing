@@ -22,7 +22,7 @@ form.addEventListener("submit", (e) => {
         "rType": "getUser",
         "dType": "user_accounts",
         "username": formData.get("username"),
-        "password": formData.get("password");
+        "password": formData.get("password")
     };
 
     var xmlData = toXML(data);
@@ -36,3 +36,4 @@ form.addEventListener("submit", (e) => {
         document.querySelector("#fillMe").innerHTML = this.responseText;
     }
 });
+
