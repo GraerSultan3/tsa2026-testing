@@ -6,7 +6,7 @@
     $processedData = json_decode($data);
     if ($processedData === null)
     {
-        echo json_last_msg() + " " + $data;
+        echo $data;
     }
     if ($processedData->rType == "getUser")
     {
