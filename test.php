@@ -3,10 +3,7 @@
 
   try
   {
-    $processedData = new SimpleXMLElement($data);
-    $rType = (string) $processedData->rType;
-    $dType = (string) $processedData->dType;
-    $index = (int) $processedData->index;
+    $processedData = json_decode($data);
 
     echo "Filled u";
   }
