@@ -16,7 +16,7 @@
       $sql->bind_param("ss", $processedData->username, $processedData->password);
       $result = $sql->execute();
 
-      if ($result != 0)
+      if ($result instanceof mysqli_result)
       {
         $row = $result->fetch_assoc();
         echo sprintf("Welcome %s", $row['first_name']);
