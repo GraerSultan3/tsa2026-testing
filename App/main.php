@@ -12,7 +12,14 @@
     }
     if ($processedData->rType == "getUser")
     {
-        echo "Nice to see you user";
+      $sql = sprintf("SELECT * FROM user_accounts WHERE username=%s,password=%s", $processedData->username, $processedData->password);
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0)
+      {
+        $row = $result->fetch_assoc();
+        echo sprintf("Welcome %s", $rpw["first_name]);
+      }
     }
     else
     {
