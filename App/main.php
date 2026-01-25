@@ -4,7 +4,10 @@
   try
   {
     $processedData = json_decode($data);
-
+    if ($processedData === null)
+    {
+        echo "I'm dead frfr";
+    }
     if ($processedData->rType == "getUser")
     {
         echo "Nice to see you user";
