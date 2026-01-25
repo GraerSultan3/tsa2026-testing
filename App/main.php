@@ -4,6 +4,7 @@
   try
   {
     $processedData = json_decode($data);
+    echo "yo i fucking exist ya know";
 
     if ($processedData->rType == "getUser")
     {
