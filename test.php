@@ -12,6 +12,6 @@
   }
   catch (Exception $e)
   {
-    echo "Chat idk where tf to put this data-bomb -> " + $e;
+    echo $e;
   }  
 ?>
