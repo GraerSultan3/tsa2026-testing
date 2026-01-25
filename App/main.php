@@ -16,14 +16,14 @@
       $sql->bind_param("ss", $processedData->username, $processedData->password);
       $result = $sql->execute();
 
-      if (mysqli_num_rows($result) > 0)
+      if ($result != 0)
       {
         $row = $result->fetch_assoc();
         echo sprintf("Welcome %s", $row['first_name']);
       }
       else
       {
-        echo mysqli_num_rows($result);
+        echo "nobody found;
       }
 
       $sql->close();
