@@ -9,14 +9,15 @@
     if ($processedData === null)
     {
         echo $data;
+        return;
     }
     if ($processedData->rType == "getUser")
     {
       $sql = $conn->prepare("SELECT * FROM user_accounts WHERE username=? AND password=? LIMIT 1");
       $sql->bind_param("ss", $processedData->username, $processedData->password);
-      $result = $sql->execute();
+      $result = $sql->get_result();
 
-      if ($result instanceof mysqli_result)
+      if ($result and $result->num_rows > 0)
       {
         $row = $result->fetch_assoc();
         echo sprintf("Welcome %s", $row['first_name']);
