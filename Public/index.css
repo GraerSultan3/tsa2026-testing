@@ -1,8 +1,13 @@
-@import url("./Imports/fontSizing.css");
+@import url("../Imports/fontSizing.css");
 
 :root
 {
     box-sizing: border-box;
+    --blueish: #0D3B66;
+    --greenish: #43AA8B;
+    --brownish: #847577;
+    --blackish: #161925;
+    --whiteish: #FCFAFA;
 }
 
 body
@@ -13,6 +18,9 @@ body
     padding: 0;
     margin: 0;
     color: #FCFAFA;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
 }
 
 nav
@@ -58,99 +66,86 @@ nav #title
 
 article
 {
-    max-width: 90vw;
-    justify-self: center;
-    margin: 5vh 0;
-    
-    display: flex;
-    flex-direction: column;
+    background: url("Images\\monkey.jpg");
+    display: inline-block;
+    max-width: 50vw;
     justify-content: center;
     align-items: center;
-}
-article p
-{
-    text-indent: 5%;
-    margin: 1vh;
-}
-
-/*displayGrid
-{
-    margin: 1vh 0;
-}
-
-displayItem
-{
-    border-radius: 2vh 2vw;
-}
-displayItem > div > h1, 
-displayItem > div > h2, 
-displayItem > div > h3, 
-displayItem > div > h4, 
-displayItem > div > h5, 
-displayItem > div > h6,
-displayItem > div > p,
-displayItem > p, 
-displayItem > div > img
-{
-    border: solid 0.25vh #FFFFFF;
-    border-radius: 2vh;
-    margin: 1.5% 1.5%;
-    padding: 1.5% 1.5%;
-    background-color: #161925;
-    flex: 1 1 auto;
     justify-self: center;
+    margin: 5vh 5vw;
+    padding: 2vh 2vw;
     align-self: center;
 }
-.eventHolder
+article > p
 {
-    display: flex;
-    flex-direction: column;
-    column-gap: 1vw;
-
-    width: 100%;
-}*/
-
-displayGrid
-{
-    margin: 1vh 0;
-    flex-direction: column;
-    row-gap: 5vh;
+    background: var(--greenish);
 }
 
-displayItem
+.program
 {
-    border-radius: 2vh 2vw;
+    background: var(--whiteish);
+    color: var(--blackish);
+    padding: 2vh 3vw;
+    flex: 1 1 auto;
+    display: flex;
     flex-direction: row;
-    column-gap: 1vw;
-    padding: 2% 2%;
-}
-displayItem > div > h1, 
-displayItem > div > h2, 
-displayItem > div > h3, 
-displayItem > div > h4, 
-displayItem > div > h5, 
-displayItem > div > h6,
-displayItem > div > p,
-displayItem > p, 
-displayItem > div > img
-{
-    border: solid 0.25vh #FFFFFF;
-    border-radius: 2vh;
-    margin: 1.5% 1.5%;
-    padding: 1.5% 1.5%;
-    background-color: #161925;
-    flex: 1 1 auto;
+    flex-flow: column;
+    justify-items: center;
+    align-items: flex-start;
+    max-height: fit-content;
+    max-width: fit-content;
+    justify-content: center;
     justify-self: center;
-    align-self: center;
-    width: 100%;
+    margin: 0;
+
 }
-.eventHolder
+.program > p
+{
+    text-indent: 3vw;
+    line-height: 1.8;
+    background: none;
+}
+.program > a
+{
+    align-self: center;
+}
+
+.program, quote
+{
+    font-weight: 450;
+}
+
+quote-display
+{
+    padding: 0;
+}
+
+quote
+{
+    margin: 0;
+}
+
+#mainLayout
+{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5vh 5vw;
+    column-gap: 3vw;
+}
+
+#programs
 {
     display: flex;
     flex-direction: column;
-    row-gap: 1vh;
-    flex: 1 0 auto;
-    width: max-content;
+    align-items: center;
+    row-gap: 3vh;
+}
+#programs > *
+{
+    
+    flex: 1 1 auto;
 }
 
 @media screen and (max-width: 600px)
