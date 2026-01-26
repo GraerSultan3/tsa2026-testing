@@ -48,8 +48,9 @@ h6
     --init-size: calc(0.67em * var(--font-factor));
     font-size: clamp(calc(var(--init-size) * 0.5), calc(0.67vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
 }
-p, div, a
+p, div, a, address
 {
     --init-size: calc(1em * var(--font-factor));
     font-size: clamp(calc(var(--init-size) * 0.5), calc(1vw * var(--font-factor)) + 0.25rem, calc(var(--init-size) * 2));
 }
+
