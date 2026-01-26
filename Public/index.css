@@ -148,6 +148,22 @@ quote
     flex: 1 1 auto;
 }
 
+footer
+{
+    background-color: var(--whiteish);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 2vh 3vw;
+}
+footer > *
+{
+    background-color: var(--blackish);
+    padding: 1vh 1vw;
+    border-radius: 2vh 2vh;
+}
+
 @media screen and (max-width: 600px)
 {
     .eventHolder
