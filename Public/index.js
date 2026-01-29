@@ -21,7 +21,7 @@ else
 for (let i = 0; i < mainLayout.children[biggerElement].children.length; i++)
 {
     let child = mainLayout.children[biggerElement].children[i];
-    if (child.getBoundingClientRect().top + window.scrollY> endHeight)
+    if (child.getBoundingClientRect().top + window.scrollY > endHeight + Number.parseFloat(window.getComputedStyle(document.body).height.substring(0, window.getComputedStyle(document.body).height - 2)) / 0.01)
     {
         child.offsetWidth = mainLayout.offsetWidth;
         madeElement.appendChild(child);
