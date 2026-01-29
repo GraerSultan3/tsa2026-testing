@@ -31,8 +31,3 @@ for (let i = 0; i < mainLayout.children[biggerElement].children.length; i++)
     console.log(child.getBoundingClientRect().top + " " + i);
 }
 mainLayout.children[biggerElement].style.gridTemplateColumns = `repeat(${mainLayout.children[biggerElement].children.length}, max-content);`;
-
-if (Number.parseFloat(window.getComputedStyle(mainLayout.children[biggerElement]).height.substring(0, window.getComputedStyle(mainLayout.children[biggerElement]).height - 2)) < Number.parseFloat(window.getComputedStyle(mainLayout.children[(biggerElement + 1) % 2]).height.substring(0, window.getComputedStyle(mainLayout.children[(biggerElement + 1) % 2]).height - 2)))
-{
-    mainLayout.children[biggerElement].style.height = window.getComputedStyle(mainLayout.children[(biggerElement + 1) % 2]).height;
-}
