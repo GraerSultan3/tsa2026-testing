@@ -30,3 +30,4 @@ for (let i = 0; i < mainLayout.children[biggerElement].children.length; i++)
     }
     console.log(child.getBoundingClientRect().top + " " + i);
 }
+mainLayout.children[biggerElement].style.gridTemplateColumns = `repeat(${mainLayout.children[biggerElement].children.length}, max-content);`
