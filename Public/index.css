@@ -59,7 +59,7 @@ nav #title
 .redirect:hover
 {
     background-color: var(--textColor);
-    color: var(--accentColor);
+    color: var(--background);
     text-decoration: underline;
 }
 
