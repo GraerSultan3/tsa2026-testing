@@ -65,8 +65,8 @@ nav #title
 
 .program
 {
-    background: var(--textColor);
-    color: var(--mainColor);
+    background: var(--main);
+    color: var(--textColor);
     padding: 2vh 3vw;
     flex: 1 1 auto;
     display: flex;
@@ -99,7 +99,7 @@ nav #title
 
 #programs > article
 {
-    background-color: var(--textColor);
+    background-color: var(--accentColor);
     padding: 2vh 3vw;
     flex: 1 1 auto;
     display: flex;
