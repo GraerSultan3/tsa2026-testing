@@ -99,7 +99,7 @@ nav #title
 
 #programs > article
 {
-    background-color: var(--accentColor);
+    background-color: var(--mainColor);
     padding: 2vh 3vw;
     flex: 1 1 auto;
     display: flex;
