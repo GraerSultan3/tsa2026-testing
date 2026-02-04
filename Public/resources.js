@@ -79,8 +79,7 @@ function getPrograms()
         let currChild;
         let childChild;
 
-        console.log(incomingData.length);
-        console.log(incomingData[0].imageAddress);
+        console.log(incomingData);
         for (let i = 0; i < incomingData.length; i++)
         {
             currChild = document.createElement("div");
