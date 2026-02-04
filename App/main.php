@@ -32,6 +32,26 @@
       $sql->close();
       $conn->close();
     }
+    else if ($processedData->rType == "getResources")
+    {
+      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription` from `resources`);
+      $sql->execute();
+      $result = $sql->get_result();
+
+      if ($result and $result->num_rows > 0)
+      {
+        foreach($result as $row)
+        {
+          $row = $result->fetch_assoc();
+          $data = (object) ['shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']];
+          echo json_encode($data);
+        }
+      }
+
+      $result->free();
+      $sql->close();
+      $conn->close();
+    }
     else
     {
         echo $processedData->rType;
