@@ -81,7 +81,7 @@ function getPrograms()
         {
             currChild = document.createElement("div");
             childChild = document.createElement("img");
-            childChild.src = incomingData[i].imageAddress;
+            childChild.src = "." + incomingData[i].imageAddress;
             childChild.width = 100;
             childChild.height = 100;
             currChild.appendChild(childChild);
