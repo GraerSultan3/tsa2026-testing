@@ -72,7 +72,7 @@ function getPrograms()
     xml.setRequestHeader("Content-type", "application/json");
     xml.send(JSON.stringify(data));
 
-    xml.onreadystatechange = function()
+    xml.onload = function()
     {
         var incomingData = this.responseText;
         console.log(incomingData);
