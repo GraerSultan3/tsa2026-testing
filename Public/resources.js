@@ -1,0 +1,59 @@
+const nav = document.getElementsByTagName("nav")[0];
+const title = document.getElementById("title");
+const search = document.getElementById("search");
+const resources = document.getElementById("resources");
+
+nav.style.gridTemplateColumns = `repeat(${nav.children.length - 1}, 1fr)`;
+
+if (nav.children.length % 2 == 1)
+{
+    title.style.gridColumn = `${Math.floor((nav.children.length - 1) / 2)} / ${Math.floor((nav.children.length - 1) / 2 + 2)}`;
+}
+else
+{
+    title.style.gridColumn = `${Math.round(nav.children.length / 2)}`;
+}
+
+search.addEventListener("change", function()
+{
+    let result = search.value.split(" ");
+
+    while (result.indexOf("") != -1)
+    {
+        result.splice(result.indexOf(""), 1);
+    }
+  
+    var data = {
+        "rType": "search",
+        "dType": "resources",
+        "words": result
+    };
+
+    let wordCount;
+    for (let i = 0; i < resources.children.length; i++)
+    {
+        wordCount = 0;
+        for (let e = 0; e < result.length; e++)
+        {
+            let startingIndex = 0;
+            if (resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) != -1 && result[e] != "")
+            {
+                resources.children[i].children[1].innerHTML = resources.children[i].children[1].innerHTML.substring(0, resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase())) + "<mark>" + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()), resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length) + "</mark>" + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length);
+                wordCount++;
+            }
+        }
+        
+        if (wordCount == 0 && result.length != 0)
+        {
+            resources.children[i].classList.add("hidden");
+        }
+        else if (result.length == 0)
+        {
+            resources.children[i].classList.remove("hidden"); 
+            while (resources.children[i].children[1].getElementsByTagName("mark").length != 0)
+            {
+                resources.children[i].children[1].innerHTML = resources.children[i].children[1].innerHTML.substring(0, resources.children[i].children[1].innerHTML.indexOf("<mark>")) + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.indexOf("<mark>") + "<mark>".length, resources.children[i].children[1].innerHTML.indexOf("</mark>")) + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.indexOf("</mark>") + "</mark>".length, resources.children[i].children[1].innerHTML.length);
+            }
+        }
+    }
+});
