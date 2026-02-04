@@ -22,12 +22,6 @@ search.addEventListener("change", function()
     {
         result.splice(result.indexOf(""), 1);
     }
-  
-    var data = {
-        "rType": "search",
-        "dType": "resources",
-        "words": result
-    };
 
     let wordCount;
     for (let i = 0; i < resources.children.length; i++)
@@ -57,3 +51,21 @@ search.addEventListener("change", function()
         }
     }
 });
+
+function getPrograms()
+{
+    var xml = new XMLHttpRequest();
+
+    var data = {
+        "rType": "getResources",
+    }
+
+    xml.open("POST", "../App/main.php", true);
+    xml.setRequestHeader("Content-type", "application/json");
+    xml.send(JSON.stringify(data));
+
+    xml.onreadstatechange = function()
+    {
+        console.log(this.responseText);
+    }
+}
