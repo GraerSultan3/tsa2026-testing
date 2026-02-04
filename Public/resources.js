@@ -75,6 +75,7 @@ function getPrograms()
     xml.onreadystatechange = function()
     {
         var incomingData = this.responseText;
+        console.log(incomingData);
         incomingData = JSON.parse(incomingData.substring(1));
         
         let currChild;
