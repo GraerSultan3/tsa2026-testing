@@ -3,7 +3,7 @@ const title = document.getElementById("title");
 const mainLayout = document.getElementById("mainLayout");
 var height1 = Number.parseFloat(window.getComputedStyle(mainLayout.children[1]).height.substring(0, window.getComputedStyle(mainLayout.children[1]).height.length - 2));
 var height0 = Number.parseFloat(window.getComputedStyle(mainLayout.children[0]).height.substring(0, window.getComputedStyle(mainLayout.children[0]).height.length - 2));
-var endHeight = Math.min(height0, height1);
+var endHeight = Math.min(height0, height1) + mainLayout.getBoundingClientRect().top;
 var madeElement = document.getElementsByClassName("overflowGrid")[0];
 var biggerElement = (height0 > height1) ? 0 : 1;
 
