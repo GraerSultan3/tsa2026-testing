@@ -44,6 +44,7 @@
         {
           $row = $result->fetch_assoc();
           $data = (object) ['shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']];
+          echo $data;
           echo json_encode($data);
         }
       }
