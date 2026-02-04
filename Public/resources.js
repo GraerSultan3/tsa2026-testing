@@ -72,32 +72,30 @@ function getPrograms()
     xml.setRequestHeader("Content-type", "application/json");
     xml.send(JSON.stringify(data));
 
-    var incomingData;
     xml.onreadystatechange = function()
     {
-        incomingData = this.responseText;
-    }
-
-    let currChild;
-    let childChild;
-    for (let i = 0; i < incomingData.length; i++)
-    {
-        currChild = document.createElement("div");
-        childChild = document.createElement("img");
-        childChild.src = incomingData[i].imageAddress;
-        childChild.width = 100;
-        childChild.height = 100;
-        currChild.appendChild(childChild);
-
-        childChild = document.createElement("h2");
-        childChild.innerHTML = incomingData[i].shortDescription;
-        currChild.appendChild(childChild);
-        
-        childChild = document.createElement("p");
-        childChild.innerHTML = incomingData[i].longDescription;
-        currChild.appendChild(childChild);
-
-        resources.appendChild(currChild);
+        var incomingData = this.responseText;
+        let currChild;
+        let childChild;
+        for (let i = 0; i < incomingData.length; i++)
+        {
+            currChild = document.createElement("div");
+            childChild = document.createElement("img");
+            childChild.src = incomingData[i].imageAddress;
+            childChild.width = 100;
+            childChild.height = 100;
+            currChild.appendChild(childChild);
+    
+            childChild = document.createElement("h2");
+            childChild.innerHTML = incomingData[i].shortDescription;
+            currChild.appendChild(childChild);
+            
+            childChild = document.createElement("p");
+            childChild.innerHTML = incomingData[i].longDescription;
+            currChild.appendChild(childChild);
+    
+            resources.appendChild(currChild);
+        }
     }
 }
 
