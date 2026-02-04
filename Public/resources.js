@@ -75,8 +75,12 @@ function getPrograms()
     xml.onreadystatechange = function()
     {
         var incomingData = this.responseText;
+        
         let currChild;
         let childChild;
+
+        console.log(incomingData.length);
+        console.log(inocmingData[0].imageAddress);
         for (let i = 0; i < incomingData.length; i++)
         {
             currChild = document.createElement("div");
