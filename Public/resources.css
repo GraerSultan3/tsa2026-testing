@@ -112,4 +112,5 @@ nav #title
 #resources > *.hidden
 {
     visibility: hidden;
+    order: 1;
 }
