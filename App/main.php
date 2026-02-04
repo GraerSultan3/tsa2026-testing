@@ -43,8 +43,7 @@
         foreach($result as $row)
         {
           $row = $result->fetch_assoc();
-          $data = (object) ['shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']];
-          echo var_dump($data);
+          $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']);
           echo json_encode($data);
         }
       }
