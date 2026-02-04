@@ -34,7 +34,7 @@ o<?php
     }
     else if ($processedData->rType == "getResources")
     {
-      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription` from `resources`");
+      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription`, `imageAddress` from `resources`");
       $sql->execute();
       $result = $sql->get_result();
 
@@ -44,7 +44,7 @@ o<?php
         $row;
         while ($row = $result->fetch_assoc())
         {
-          $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']);
+          $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription'], 'imageAddress' => $row['imageAddress']);
           array_push($outputData, $data);
         }
         
