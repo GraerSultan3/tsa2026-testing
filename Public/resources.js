@@ -27,28 +27,36 @@ search.addEventListener("change", function()
     for (let i = 0; i < resources.children.length; i++)
     {
         wordCount = 0;
-        for (let e = 0; e < result.length; e++)
+        for (let g = 0; g < resources.children[i].children.length; g++)
         {
-            let startingIndex = 0;
-            if (resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) != -1 && result[e] != "")
+            for (let e = 0; e < result.length; e++)
             {
-                resources.children[i].children[1].innerHTML = resources.children[i].children[1].innerHTML.substring(0, resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase())) + "<mark>" + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()), resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length) + "</mark>" + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length);
-                wordCount++;
+                let startingIndex = 0;
+                if (resources.children[i].children[g].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) != -1 && result[e] != "")
+                {
+                    resources.children[i].children[g].innerHTML = resources.children[i].children[g].innerHTML.substring(0, resources.children[i].children[g].innerHTML.toLowerCase().indexOf(result[e].toLowerCase())) + "<mark>" + resources.children[i].children[g].innerHTML.substring(resources.children[i].children[g].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()), resources.children[i].children[g].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length) + "</mark>" + resources.children[i].children[g].innerHTML.substring(resources.children[i].children[g].innerHTML.toLowerCase().indexOf(result[e].toLowerCase()) + result[e].length);
+                    wordCount++;
+                }
+            }
+            
+            if (wordCount == 0 && result.length != 0)
+            {
+                resources.children[i].classList.add("hidden");
+            }
+            else if (result.length != 0)
+            {
+                resources.children[i].classList.remove("hidden");
+            }
+            else
+            {
+                resources.children[i].classList.remove("hidden");
+                while (resources.children[i].children[g].getElementsByTagName("mark").length != 0)
+                {
+                    resources.children[i].children[g].innerHTML = resources.children[i].children[g].innerHTML.substring(0, resources.children[i].children[g].innerHTML.indexOf("<mark>")) + resources.children[i].children[g].innerHTML.substring(resources.children[i].children[g].innerHTML.indexOf("<mark>") + "<mark>".length, resources.children[i].children[g].innerHTML.indexOf("</mark>")) + resources.children[i].children[g].innerHTML.substring(resources.children[i].children[g].innerHTML.indexOf("</mark>") + "</mark>".length, resources.children[i].children[g].innerHTML.length);
+                }
             }
         }
-        
-        if (wordCount == 0 && result.length != 0)
-        {
-            resources.children[i].classList.add("hidden");
-        }
-        else if (result.length == 0)
-        {
-            resources.children[i].classList.remove("hidden"); 
-            while (resources.children[i].children[1].getElementsByTagName("mark").length != 0)
-            {
-                resources.children[i].children[1].innerHTML = resources.children[i].children[1].innerHTML.substring(0, resources.children[i].children[1].innerHTML.indexOf("<mark>")) + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.indexOf("<mark>") + "<mark>".length, resources.children[i].children[1].innerHTML.indexOf("</mark>")) + resources.children[i].children[1].innerHTML.substring(resources.children[i].children[1].innerHTML.indexOf("</mark>") + "</mark>".length, resources.children[i].children[1].innerHTML.length);
-            }
-        }
+    }
     }
 });
 
@@ -65,9 +73,32 @@ function getPrograms()
     xml.setRequestHeader("Content-type", "application/json");
     xml.send(JSON.stringify(data));
 
+    var incomingData;
     xml.onreadystatechange = function()
     {
-        console.log(this.responseText);
+        incomingData = this.responseText;
+    }
+
+    let currChild;
+    let childChild;
+    for (let i = 0; i < incomingData.length; i++)
+    {
+        currChild = document.createElement("div");
+        childChild = document.createElement("img");
+        childChild.src = incomingData[i].imageAddress;
+        childChild.width = 100;
+        childChild.height = 100;
+        currChild.appendChild(childChild);
+
+        childChild = document.createElement("h2");
+        childChild.innerHTML = incomingData[i].shortDescription;
+        currChild.appendChild(childChild);
+        
+        childChild = document.createElement("p");
+        childChild.innerHTML = incomingData[i].longDescription;
+        currChild.appendChild(childChild);
+
+        resources.appendChild(currChild);
     }
 }
 
