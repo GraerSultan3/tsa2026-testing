@@ -54,6 +54,7 @@ search.addEventListener("change", function()
 
 function getPrograms()
 {
+    console.log("requesting from server :)");
     var xml = new XMLHttpRequest();
 
     var data = {
@@ -69,3 +70,5 @@ function getPrograms()
         console.log(this.responseText);
     }
 }
+
+getPrograms();
