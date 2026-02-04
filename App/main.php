@@ -1,4 +1,4 @@
-<?php
+o<?php
   include("db_connection.php");
 
   $data = file_get_contents("php://input");
@@ -40,6 +40,7 @@
 
       if ($result and $result->num_rows > 0)
       {
+        echo $result->num_rows;
         $num = 0;
         foreach($result as $row)
         {
