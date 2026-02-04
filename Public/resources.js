@@ -79,7 +79,7 @@ function getPrograms()
         let currChild;
         let childChild;
 
-        console.log(typeof incomingData);
+        console.log(incomingData);
         for (let i = 0; i < incomingData.length; i++)
         {
             currChild = document.createElement("div");
