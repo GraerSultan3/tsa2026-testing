@@ -80,8 +80,7 @@ function getPrograms()
         
         let currChild;
         let childChild;
-
-        console.log(incomingData);
+        
         for (let i = 0; i < incomingData.length; i++)
         {
             currChild = document.createElement("div");
@@ -100,6 +99,10 @@ function getPrograms()
             currChild.appendChild(childChild);
     
             resources.appendChild(currChild);
+
+            console.log("made new child");
         }
     }
 }
+
+getPrograms();
