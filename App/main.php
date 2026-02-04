@@ -34,7 +34,7 @@
     }
     else if ($processedData->rType == "getResources")
     {
-      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription` from `resources`);
+      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription` from `resources`");
       $sql->execute();
       $result = $sql->get_result();
 
