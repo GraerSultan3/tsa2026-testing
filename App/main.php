@@ -40,7 +40,8 @@ o<?php
 
       if ($result and $result->num_rows > 0)
       {
-        foreach($result as $row)
+        $row;
+        while ($row = $result->fetch_assoc())
         {
           $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']);
           echo $num;
