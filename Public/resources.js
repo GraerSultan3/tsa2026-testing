@@ -57,7 +57,6 @@ search.addEventListener("change", function()
             }
         }
     }
-    }
 });
 
 function getPrograms()
