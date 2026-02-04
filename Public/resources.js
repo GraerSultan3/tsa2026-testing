@@ -80,7 +80,7 @@ function getPrograms()
         let childChild;
 
         console.log(incomingData.length);
-        console.log(inocmingData[0].imageAddress);
+        console.log(incomingData[0].imageAddress);
         for (let i = 0; i < incomingData.length; i++)
         {
             currChild = document.createElement("div");
