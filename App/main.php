@@ -40,10 +40,13 @@
 
       if ($result and $result->num_rows > 0)
       {
+        $num = 0;
         foreach($result as $row)
         {
+          $num += 1;
           $row = $result->fetch_assoc();
           $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription']);
+          echo $num;
           echo json_encode($data);
         }
       }
