@@ -65,7 +65,7 @@ function getPrograms()
     xml.setRequestHeader("Content-type", "application/json");
     xml.send(JSON.stringify(data));
 
-    xml.onreadstatechange = function()
+    xml.onreadystatechange = function()
     {
         console.log(this.responseText);
     }
