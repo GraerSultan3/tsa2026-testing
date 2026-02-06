@@ -100,6 +100,7 @@ function getPrograms()
             for (let  key in Object.keys(incomingData[i].activeFilters))
             {
                 currChild.setAttribute(key, incomingData[i].activeFilters[key];
+                console.log(`${i}: ${key}, ${incomingData[i].activeFilters[key]}`);
             }
     
             resources.appendChild(currChild);
