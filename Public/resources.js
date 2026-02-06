@@ -97,6 +97,8 @@ function getPrograms()
             childChild.innerHTML = incomingData[i].longDescription;
             currChild.appendChild(childChild);
 
+            console.log(incomingData[i].activeFilters);
+
             for (let  key in Object.keys(incomingData[i].activeFilters))
             {
                 currChild.setAttribute(key, incomingData[i].activeFilters[key];
