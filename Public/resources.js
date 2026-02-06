@@ -103,12 +103,13 @@ function getPrograms()
             currChild.appendChild(childChild);
 
             attributes = JSON.parse(incomingData[i].activeFilters);
-            console.log(attributes);
+            console.log(incomingData[i].activeFilters);
+            console.log(typeof incomingData[i].activeFilters);
 
             for (let  key in Object.keys(attributes))
             {
                 currChild.setAttribute(key, attributes[key]);
-                console.log(`${i}: ${key}, ${attributes[key]}`);
+                //console.log(`${i}: ${key}, ${attributes[key]}`);
             }
     
             resources.appendChild(currChild);
