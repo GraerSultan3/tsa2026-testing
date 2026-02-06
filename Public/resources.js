@@ -83,6 +83,7 @@ function getPrograms()
         
         let currChild;
         let childChild;
+        let attributes;
         
         for (let i = 0; i < incomingData.length; i++)
         {
@@ -101,12 +102,13 @@ function getPrograms()
             childChild.innerHTML = incomingData[i].longDescription;
             currChild.appendChild(childChild);
 
-            console.log(incomingData[i].activeFilters);
+            attributes = JSON.parse(incomingData[i].activeFilters);
+            console.log(attributes);
 
-            for (let  key in Object.keys(incomingData[i].activeFilters))
+            for (let  key in Object.keys(attributes))
             {
-                currChild.setAttribute(key, incomingData[i].activeFilters[key]);
-                console.log(`${i}: ${key}, ${incomingData[i].activeFilters[key]}`);
+                currChild.setAttribute(key, attributes[key]);
+                console.log(`${i}: ${key}, ${attributes[key]}`);
             }
     
             resources.appendChild(currChild);
