@@ -1,5 +1,6 @@
 o<?php
   include("db_connection.php");
+  include("logger.php");
 
   $data = file_get_contents("php://input");
 
