@@ -110,7 +110,7 @@ function getPrograms()
             for (let  key in Object.keys(attributes))
             {
                 currChild.setAttribute(key, attributes[key]);
-                //console.log(`${i}: ${key}, ${attributes[key]}`);
+                console.log(`${i}: ${key}, ${attributes[key]}`);
             }
     
             resources.appendChild(currChild);
