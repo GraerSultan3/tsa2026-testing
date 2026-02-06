@@ -44,7 +44,7 @@ o<?php
         $row;
         while ($row = $result->fetch_assoc())
         {
-          $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription'], 'imageAddress' => $row['imageAddress'], 'activeFilters' => json_encode($row['activeFilters']));
+          $data = array('shortDescription' => $row['shortDescription'], 'longDescription' => $row['longDescription'], 'imageAddress' => $row['imageAddress'], 'activeFilters' => json_encode($row['activeFilters'], true));
           array_push($outputData, $data);
         }
         echo json_encode($outputData);
