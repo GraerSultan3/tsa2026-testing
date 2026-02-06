@@ -107,7 +107,7 @@ function getPrograms()
             console.log(attributes);
             console.log(typeof attributes);
 
-            for (let  key in Object.keys(attributes))
+            for (let key in attributes)
             {
                 currChild.setAttribute(key, attributes[key]);
                 console.log(`${i}: ${key}, ${attributes[key]}`);
