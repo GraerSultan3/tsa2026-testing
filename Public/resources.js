@@ -103,8 +103,9 @@ function getPrograms()
             currChild.appendChild(childChild);
 
             attributes = JSON.parse(incomingData[i].activeFilters);
-            console.log(incomingData[i].activeFilters);
-            console.log(typeof incomingData[i].activeFilters);
+            attributes = JSON.parse(attributes);
+            console.log(attributes);
+            console.log(typeof attributes);
 
             for (let  key in Object.keys(attributes))
             {
