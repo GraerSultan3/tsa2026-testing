@@ -35,7 +35,7 @@ o<?php
     }
     else if ($processedData->rType == "getResources")
     {
-      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription`, `imageAddress` from `resources`");
+      $sql = $conn->prepare("SELECT `shortDescription`, `longDescription`, `imageAddress`, `activeFilters` from `resources`");
       $sql->execute();
       $result = $sql->get_result();
 
