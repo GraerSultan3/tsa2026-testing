@@ -114,3 +114,104 @@ nav #title
     visibility: hidden;
     order: 1;
 }
+
+#filters
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: flex-end;
+    width: max-content;
+
+    background-color: var(--whiteish);
+    color: var(--blackish);
+    padding: 2vh 2vw;
+}
+#filters > *
+{
+    height: auto;
+    width: auto;
+
+    transition: height 0.5s, width 0.5s, order 0.5s;
+}
+#filters > #applyButton
+{
+    max-width: fit-content;
+    align-self: center;
+    border-radius: 1.5vh;
+    padding: 0.5vh 0.5vw;
+    background-color: var(--blackish);
+    color: var(--whiteish);
+
+    transition: background-color 0.2s;
+}
+#filters > #applyButton:hover
+{
+    background-color: var(--greenish);
+}
+#filters > #openClose
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: unset;
+    top: unset;
+
+    max-width: fit-content;
+    align-self: center;
+    padding: 0.5vh 0.5vw;
+    background-color: var(--blackish);
+    color: var(--whiteish);
+
+    transition: background-color 0.2s, left, bottom, right, top;
+}
+#filters > #openClose:hover
+{
+    background-color: var(--greenish);
+}
+#filters > #openClose.closed
+{
+    left: unset;
+    bottom: unset;
+    right: 0;
+    top: 0;
+}
+#filters.closed
+{
+    animation-name: closeFilterMenu;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+#filters > *.hidden
+{
+    order: 1;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.filterContainer
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+@keyframes closeFilterMenu
+{
+    0%
+    {
+        height: auto;
+        width: max-content;
+        padding: 2vh 2vw;
+    }
+    100%
+    {
+        height: min-content;
+        width: min-content;
+        padding: 0;
+    }
+}
