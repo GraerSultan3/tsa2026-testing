@@ -4,7 +4,7 @@ const search = document.getElementById("search");
 const resources = document.getElementById("resources");
 const filters = document.getElementsByClassName("filter");
 const filterApply = document.getElementById("applyButton");
-const filterOptions = ["isHomeless", "isReligious", "isDiscriminatory"];
+const filterOptions = ["isHomeless", "isReligious", "isDiscriminatory", "isOutdoor", "isAdult", "isYouth"];
 const openFilters = document.getElementById("openClose");
 var activeFilters = [];
 
