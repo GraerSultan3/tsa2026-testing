@@ -2,6 +2,11 @@ const nav = document.getElementsByTagName("nav")[0];
 const title = document.getElementById("title");
 const search = document.getElementById("search");
 const resources = document.getElementById("resources");
+const filters = document.getElementsByClassName("filter");
+const filterApply = document.getElementById("applyButton");
+const filterOptions = ["isHomeless", "isReligious", "isDiscriminatory"];
+const openFilters = document.getElementById("openClose");
+var activeFilters = [];
 
 nav.style.gridTemplateColumns = `repeat(${nav.children.length - 1}, 1fr)`;
 
@@ -117,5 +122,82 @@ function getPrograms()
         }
     }
 }
+
+filterApply.addEventListener("click", function(e)
+{
+    e.preventDefault();
+    
+    for (let filter of filters)
+    {
+        if (filter.checked)
+        {
+            if (activeFilters.indexOf(filter.name) == -1)
+            {
+                activeFilters.push(filter.name);
+            }
+        }
+        else if (activeFilters.indexOf(filter.name) != -1 && ! filter.checked)
+        {
+            activeFilters.splice(activeFilters.indexOf(filter.name), 1);
+        }
+    }
+
+    for (let i = 0; i < resources.children.length; i++)
+    {
+        let isAllowed = true;
+        if (activeFilters.length == 0)
+        {
+            if (resources.children[i].classList.contains("hidden"))
+            {
+                resources.children[i].classList.remove("hidden");
+            }
+        }
+        else
+        {
+            for (let e = 0; e < activeFilters.length; e++)
+            {
+                if (resources.children[i].getAttribute(activeFilters[e]) == "true" && isAllowed)
+                {
+                    if (resources.children[i].classList.contains("hidden"))
+                    {
+                        resources.children[i].classList.remove("hidden");
+                    }
+                }
+                else
+                {
+                    if (!resources.children[i].classList.contains("hidden"))
+                    {
+                        resources.children[i].classList.add("hidden");
+                    }
+                    isAllowed = false;
+                }
+            }
+        }
+    }
+});
+
+openFilters.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    let filterMenu = document.getElementById("filters");
+
+    for (let i = 0; i < filterMenu.children.length - 1; i++)
+    {
+        filterMenu.children[i].classList.toggle("hidden");
+    }
+
+    filterMenu.children[filterMenu.children.length - 1].classList.toggle("closed");
+    filterMenu.classList.toggle("closed");
+
+    if (filterMenu.children[filterMenu.children.length - 1].classList.contains("closed"))
+    {
+        filterMenu.children[filterMenu.children.length - 1].innerHTML = "Open";
+    }
+    else
+    {
+        filterMenu.children[filterMenu.children.length - 1].innerHTML = "Close";
+    }
+});
 
 getPrograms();
