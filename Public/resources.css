@@ -200,6 +200,54 @@ nav #title
     align-content: center;
 }
 
+#submission
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    max-width: 50vw;
+    padding: 2vh 2vw;
+    background-color: var(--whiteish);
+    color: var(--blackish);
+    margin: 3vh 3vw;
+
+    justify-self: center;
+    align-self: center;
+}
+#submission > h2, #submission > h4
+{
+    margin: 0;
+}
+#submission > label
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
+#submission > input[type="submit"]
+{
+    max-width: min-content;
+    background-color: var(--greenish);
+    color: var(--whiteish);
+}
+#submission input
+{
+    cursor: pointer;
+}
+#submission input[type="text"]
+{
+    cursor: text;
+    caret-color: var(--blackish);
+}
+#submission > #confirmationMessage
+{
+    visibility: hidden;
+    height: 0;
+}
+
 @keyframes closeFilterMenu
 {
     0%
