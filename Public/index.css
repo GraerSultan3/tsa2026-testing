@@ -66,19 +66,18 @@ nav #title
 
 article
 {
-    background: url("Images\\monkey.jpg");
-    display: inline-block;
-    max-width: 50vw;
-    justify-content: center;
-    align-items: center;
-    justify-self: center;
     margin: 5vh 5vw;
     padding: 2vh 2vw;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--whiteish);
+    color: var(--blackish);
+    justify-content: center;
+    align-items: center;
 }
 article > p
 {
-    background: var(--greenish);
+    text-indent: 3vw;
 }
 
 .program
