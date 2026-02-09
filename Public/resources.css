@@ -217,6 +217,10 @@ nav #title
     justify-self: center;
     align-self: center;
 }
+#submission *
+{
+    padding: 1vh 1vw;
+}
 #submission > h2, #submission > h4
 {
     margin: 0;
