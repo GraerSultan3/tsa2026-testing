@@ -7,6 +7,16 @@ const filterApply = document.getElementById("applyButton");
 const filterOptions = ["isHomeless", "isReligious", "isDiscriminatory", "isOutdoor", "isAdult", "isYouth"];
 const openFilters = document.getElementById("openClose");
 var activeFilters = [];
+const form = document.getElementById("submission");
+
+form.addEventListener("submit", function(e)
+{
+    form.reset();
+    form.children[form.children.length - 1].style.visibility = "visible";
+    form.children[form.children.length - 1].style.height = "auto";
+
+    e.preventDefault();
+});
 
 nav.style.gridTemplateColumns = `repeat(${nav.children.length - 1}, 1fr)`;
 
