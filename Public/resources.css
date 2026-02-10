@@ -22,6 +22,10 @@ body
     flex: 0 0 auto;
     flex-direction: column;
 }
+body *
+{
+    box-sizing: border-box;
+}
 
 nav
 {
@@ -66,11 +70,14 @@ nav #title
 
 #search
 {
-    padding: 2vh 2vw;
+    padding: 1vh 1vw;
+    border: solid var(--blackish) 0.25vw;
     background-color: var(--whiteish);
     color: var(--blackish);
     filter: none;
     transition: filter 0.25s;
+
+    width: 70vw;
 }
 #search:focus
 {
@@ -123,11 +130,12 @@ nav #title
     justify-content: center;
     align-items: flex-start;
     align-self: flex-end;
-    width: max-content;
 
     background-color: var(--whiteish);
     color: var(--blackish);
     padding: 2vh 2vw;
+
+    width: 30vw;
 }
 #filters > *
 {
@@ -144,46 +152,14 @@ nav #title
     padding: 0.5vh 0.5vw;
     background-color: var(--blackish);
     color: var(--whiteish);
+    justify-content: center;
+    align-items: center;
 
     transition: background-color 0.2s;
 }
 #filters > #applyButton:hover
 {
     background-color: var(--greenish);
-}
-#filters > #openClose
-{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: unset;
-    top: unset;
-
-    max-width: fit-content;
-    align-self: center;
-    padding: 0.5vh 0.5vw;
-    background-color: var(--blackish);
-    color: var(--whiteish);
-
-    transition: background-color 0.2s, left, bottom, right, top;
-}
-#filters > #openClose:hover
-{
-    background-color: var(--greenish);
-}
-#filters > #openClose.closed
-{
-    left: unset;
-    bottom: unset;
-    right: 0;
-    top: 0;
-}
-#filters.closed
-{
-    animation-name: closeFilterMenu;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    animation-duration: 0.5s;
 }
 #filters > *.hidden
 {
@@ -252,18 +228,8 @@ nav #title
     height: 0;
 }
 
-@keyframes closeFilterMenu
+#searchingBox
 {
-    0%
-    {
-        height: auto;
-        width: max-content;
-        padding: 2vh 2vw;
-    }
-    100%
-    {
-        height: min-content;
-        width: min-content;
-        padding: 0;
-    }
+    display: flex;
+    width: 100vw;
 }
