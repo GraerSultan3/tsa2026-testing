@@ -14,7 +14,92 @@
             <h1 id="title">Resources</h1>
             <a class="redirect" href="index.html">Home</a>
             <a class="redirect" href="index.html">Developments</a>
+            <a class="redirect" href="history.html">History</a><!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Imports/fontSizing.css"> 
+        <link rel="stylesheet" href="Imports/footer.css"> <!-- Imports -->
+        
+        <link rel="stylesheet" href="resources.css">
+    </head>
+    <body>
+        <nav>
+            <h1 id="title">Resources</h1>
+            <a class="redirect" href="index.html">Home</a>
+            <a class="redirect" href="index.html">Developments</a>
             <a class="redirect" href="history.html">History</a>
+        </nav>
+
+        <div id="searchingBox">
+            <input type="text" id="search" placeholder="Search">
+            <form id="filters">
+                <div class="filterContainer"><input type="radio" name="isReligious" class="filter">
+                <label for="isReligious">Religious Program</label></div>
+
+                <div class="filterContainer"><input type="radio" name="isDiscriminatory" class="filter">
+                <label for="isReligious">Discrimination Program</label></div>
+
+                <div class="filterContainer"><input type="radio" name="isOutdoor" class="filter">
+                <label for="isOutdoor">Outdoor Activity</label></div>
+
+                <div class="filterContainer"><input type="radio" name="isYouth" class="filter">
+                <label for="isYouth">Youth Programs</label></div>
+
+                <button id="applyButton">Apply</button>
+            </form>
+        </div>
+        <form id="submission">
+            <h2>Resource Submission Form</h2>
+            <h4>Is there a community resource near and dear to your heart? Tell us all about it down below, so we can promote the best in our beautiful town!</h4>
+
+            <input type="text" name="resourceName" placeholder="Resource Name">
+            <label><input type="url" name="resourceLink">Link To Resource Website</label>
+            
+            <label id="checkboxContainer">
+                <label>What type of resource is this?</label>
+
+                <label for="isReligious">
+                    <input type="checkbox" name="isReligious">
+                    Religious Program
+                </label>
+
+                <label for="isReligious">
+                    <input type="checkbox" name="isDiscriminatory">
+                    Discrimination Program
+                </label>
+
+                <label for="isReligious">
+                    <input type="checkbox" name="isOutdoor">
+                    Outdoor Activity
+                </label>
+
+                <label for="isReligious">
+                    <input type="checkbox" name="isYouth">
+                    Youth Program
+                </label>
+            </label>
+
+            <input type="submit" value="Submit For Consideration">
+
+            <label id="confirmationMessage">Thank You!</label>
+        </form>
+
+        <div id="resources">
+        </div>
+        
+        <footer>
+            <address>201 E 26th St, Bryan, TX 77803</address>
+            <address>1150webmasters2026@gmail.com</address>
+            <address>(979) 213-2945</address>
+            <p>09:00 - 19:00</p>
+        </footer>
+
+        <script src="resources.js"></script>
+    </body>
+</html>
         </nav>
 
         <input type="text" id="search" placeholder="Search">
