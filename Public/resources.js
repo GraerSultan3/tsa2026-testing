@@ -186,28 +186,4 @@ filterApply.addEventListener("click", function(e)
     }
 });
 
-openFilters.addEventListener("click", function(e)
-{
-    e.preventDefault();
-
-    let filterMenu = document.getElementById("filters");
-
-    for (let i = 0; i < filterMenu.children.length - 1; i++)
-    {
-        filterMenu.children[i].classList.toggle("hidden");
-    }
-
-    filterMenu.children[filterMenu.children.length - 1].classList.toggle("closed");
-    filterMenu.classList.toggle("closed");
-
-    if (filterMenu.children[filterMenu.children.length - 1].classList.contains("closed"))
-    {
-        filterMenu.children[filterMenu.children.length - 1].innerHTML = "Open";
-    }
-    else
-    {
-        filterMenu.children[filterMenu.children.length - 1].innerHTML = "Close";
-    }
-});
-
 getPrograms();
