@@ -8,6 +8,15 @@ const filterOptions = ["isHomeless", "isReligious", "isDiscriminatory", "isOutdo
 const openFilters = document.getElementById("openClose");
 var activeFilters = [];
 const form = document.getElementById("submission");
+const filterContainer = document.getElementById("filters");
+const filterClear = document.getElementById("clearButton");
+
+filterClear.addEventListener("click", function(e) 
+{
+    e.preventDefault();
+
+    filterContainer.reset();
+});
 
 form.addEventListener("submit", function(e)
 {
