@@ -124,6 +124,8 @@ nav #title
 
 #filters
 {
+    border: solid var(--blackish) 0.25vw;
+    border-left: none;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -137,6 +139,28 @@ nav #title
 
     width: 30vw;
 }
+#filters *
+{
+    --font-factor: 1;
+
+    @media screen and (max-width: 600px)
+    {
+        --font-factor: 0.9;
+    } /*Mobile Scaling*/
+
+    @media screen and (min-width: 601px) and (max-width: 1024px)
+    {
+        --font-factor: 0.7;
+    }
+
+    @media screen and (min-width: 1024px)
+    {
+        --font-factor: 0.65;
+    } /*Desktop scaling*/
+
+    --init-size: calc(1.17em * var(--font-factor));
+    font-size: clamp(calc(var(--init-size) * 0.5), calc(1.17vw * var(--font-factor) + 0.25em), calc(var(--init-size) * 2));
+}
 #filters > *
 {
     height: auto;
@@ -144,7 +168,7 @@ nav #title
 
     transition: height 0.5s, width 0.5s, order 0.5s;
 }
-#filters > #applyButton
+#filters > div > #applyButton, #filters > div > #clearButton
 {
     max-width: fit-content;
     align-self: center;
@@ -157,7 +181,7 @@ nav #title
 
     transition: background-color 0.2s;
 }
-#filters > #applyButton:hover
+#filters > div > #applyButton:hover, #filters > div > #clearButton:hover
 {
     background-color: var(--greenish);
 }
@@ -174,6 +198,14 @@ nav #title
     display: flex;
     justify-content: center;
     align-content: center;
+}
+
+#filtersControlButtonContainer
+{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    column-gap: 2vw;
 }
 
 #submission
