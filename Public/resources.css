@@ -180,11 +180,11 @@ nav #title
 {
     display: flex;
     flex-direction: column;
-    row-gap: 2vh;
+    row-gap: 0.5vh;
     justify-content: center;
     align-items: center;
     width: fit-content;
-    max-width: 50vw;
+    max-width: 70vw;
     padding: 2vh 2vw;
     background-color: var(--whiteish);
     color: var(--blackish);
@@ -195,7 +195,7 @@ nav #title
 }
 #submission *
 {
-    padding: 1vh 1vw;
+    padding: 0.5vh 0.5vw;
 }
 #submission > h2, #submission > h4
 {
@@ -205,7 +205,7 @@ nav #title
 {
     display: flex;
     flex-direction: column;
-    row-gap: 1vh;
+    row-gap: 0.75vh;
 }
 #submission > input[type="submit"]
 {
