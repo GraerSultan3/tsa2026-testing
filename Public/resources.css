@@ -184,7 +184,7 @@ nav #title
     justify-content: center;
     align-items: center;
     width: fit-content;
-    max-width: 70vw;
+    max-width: 40vw;
     padding: 2vh 2vw;
     background-color: var(--whiteish);
     color: var(--blackish);
